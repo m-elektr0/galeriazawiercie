@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SklepyRouteImport } from './routes/sklepy'
+import { Route as PawilonyRouteImport } from './routes/pawilony'
+import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SklepyRoute = SklepyRouteImport.update({
+  id: '/sklepy',
+  path: '/sklepy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PawilonyRoute = PawilonyRouteImport.update({
+  id: '/pawilony',
+  path: '/pawilony',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,61 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/kontakt': typeof KontaktRoute
+  '/pawilony': typeof PawilonyRoute
+  '/sklepy': typeof SklepyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/kontakt': typeof KontaktRoute
+  '/pawilony': typeof PawilonyRoute
+  '/sklepy': typeof SklepyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/kontakt': typeof KontaktRoute
+  '/pawilony': typeof PawilonyRoute
+  '/sklepy': typeof SklepyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/kontakt' | '/pawilony' | '/sklepy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/kontakt' | '/pawilony' | '/sklepy'
+  id: '__root__' | '/' | '/kontakt' | '/pawilony' | '/sklepy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  KontaktRoute: typeof KontaktRoute
+  PawilonyRoute: typeof PawilonyRoute
+  SklepyRoute: typeof SklepyRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sklepy': {
+      id: '/sklepy'
+      path: '/sklepy'
+      fullPath: '/sklepy'
+      preLoaderRoute: typeof SklepyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pawilony': {
+      id: '/pawilony'
+      path: '/pawilony'
+      fullPath: '/pawilony'
+      preLoaderRoute: typeof PawilonyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +104,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  KontaktRoute: KontaktRoute,
+  PawilonyRoute: PawilonyRoute,
+  SklepyRoute: SklepyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

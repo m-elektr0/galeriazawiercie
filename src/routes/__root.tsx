@@ -29,19 +29,29 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Zawiercie City Center — Trzy pawilony, jedno miejsce" },
+      {
+        name: "description",
+        content:
+          "Zawiercie City Center — kompleks Galerii Brama Jury, M Park i Aura Park wokół ronda Jurajskich Rycerzy. Moda, gastronomia, dom, rozrywka.",
+      },
+      { name: "author", content: "Zawiercie City Center" },
+      { property: "og:title", content: "Zawiercie City Center" },
+      {
+        property: "og:description",
+        content:
+          "Trzy pawilony handlowe wokół ronda Jurajskich Rycerzy w Zawierciu. Ponad 60 sklepów i restauracji.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap",
       },
     ],
   }),
