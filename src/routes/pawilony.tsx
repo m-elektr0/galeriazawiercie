@@ -71,8 +71,8 @@ function PawilonyPage() {
           Architektura
         </span>
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-extrabold uppercase tracking-tighter leading-[0.85] mt-4 max-w-5xl">
-          Trzy bryły.<br />
-          Trzy charaktery.
+          TRZY MIEJSCA.<br />
+          TRZY CHARAKTERY.
         </h1>
         <p className="mt-8 max-w-2xl text-lg text-ink/70 leading-relaxed">
           Każdy z pawilonów Zawiercie City Center ma własną tożsamość, profil
@@ -122,7 +122,7 @@ function PawilonyPage() {
                   width={800}
                   height={1024}
                   loading="lazy"
-                  className="w-full h-full object-cover grayscale-[40%] hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover grayscale-[40%] hover:grayscale-0 transition-all duration-700 mt-0"
                 />
               </div>
               <div className="flex flex-col gap-6">
