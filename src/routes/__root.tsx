@@ -36,7 +36,7 @@ export const Route = createRootRoute({
           "Zawiercie City Center — kompleks Galerii Brama Jury, M Park i Aura Park wokół ronda Jurajskich Rycerzy. Moda, gastronomia, dom, rozrywka.",
       },
       { name: "author", content: "Zawiercie City Center" },
-      { property: "og:title", content: "Zawiercie City Center" },
+      { property: "og:title", content: "Zawiercie City Center — Trzy pawilony, jedno miejsce" },
       {
         property: "og:description",
         content:
@@ -44,6 +44,12 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Zawiercie City Center — Trzy pawilony, jedno miejsce" },
+      { name: "description", content: "Zawiercie City Center Hub is a website for a modern shopping complex featuring three distinct locations." },
+      { property: "og:description", content: "Zawiercie City Center Hub is a website for a modern shopping complex featuring three distinct locations." },
+      { name: "twitter:description", content: "Zawiercie City Center Hub is a website for a modern shopping complex featuring three distinct locations." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f4d036b8-fdde-429d-a7e0-8a3cfe132b8d/id-preview-f1c565ea--be255fe3-fe31-4ef6-8e69-ad94bf3dd40f.lovable.app-1777316175080.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f4d036b8-fdde-429d-a7e0-8a3cfe132b8d/id-preview-f1c565ea--be255fe3-fe31-4ef6-8e69-ad94bf3dd40f.lovable.app-1777316175080.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
