@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { stores, categories, categoryEmoji, type StoreCategory } from "@/data/stores";
+import { stores, categories, categoryEmoji, pavilions, type StoreCategory, type Pavilion } from "@/data/stores";
 
 export const Route = createFileRoute("/sklepy")({
   head: () => ({
@@ -25,14 +25,16 @@ export const Route = createFileRoute("/sklepy")({
 
 function SklepyPage() {
   const [active, setActive] = useState<StoreCategory | "Wszystkie">("Wszystkie");
+  const [pav, setPav] = useState<Pavilion | "Wszystkie">("Wszystkie");
   const [query, setQuery] = useState("");
 
   const filtered = useMemo(() => {
     return stores
       .filter((s) => active === "Wszystkie" || s.category === active)
+      .filter((s) => pav === "Wszystkie" || s.pavilion === pav)
       .filter((s) => s.name.toLowerCase().includes(query.toLowerCase()))
       .sort((a, b) => a.name.localeCompare(b.name, "pl"));
-  }, [active, query]);
+  }, [active, pav, query]);
 
   const grouped = useMemo(() => {
     const map = new Map<StoreCategory, typeof stores>();
@@ -60,32 +62,53 @@ function SklepyPage() {
 
       {/* FILTERS */}
       <div className="sticky top-[73px] z-40 bg-paper/95 backdrop-blur-md border-y border-ink/20">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-4 flex flex-col lg:flex-row gap-4 lg:items-center justify-between">
-          <div className="flex flex-wrap gap-2">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-4 flex flex-col gap-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-ink/40 mr-2">Pawilon</span>
             <CategoryChip
-              active={active === "Wszystkie"}
-              onClick={() => setActive("Wszystkie")}
+              active={pav === "Wszystkie"}
+              onClick={() => setPav("Wszystkie")}
               label="Wszystkie"
               count={stores.length}
             />
-            {categories.map((c) => (
+            {pavilions.map((p) => (
               <CategoryChip
-                key={c}
-                active={active === c}
-                onClick={() => setActive(c)}
-                label={c}
-                emoji={categoryEmoji[c]}
-                count={stores.filter((s) => s.category === c).length}
+                key={p}
+                active={pav === p}
+                onClick={() => setPav(p)}
+                label={p}
+                count={stores.filter((s) => s.pavilion === p).length}
               />
             ))}
           </div>
-          <input
-            type="search"
-            placeholder="Szukaj marki..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className="w-full lg:w-64 bg-transparent border border-ink/30 px-4 py-2 text-sm uppercase tracking-widest placeholder:text-ink/40 focus:outline-none focus:border-ink"
-          />
+          <div className="flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-ink/40 mr-2">Kategoria</span>
+              <CategoryChip
+                active={active === "Wszystkie"}
+                onClick={() => setActive("Wszystkie")}
+                label="Wszystkie"
+                count={stores.length}
+              />
+              {categories.map((c) => (
+                <CategoryChip
+                  key={c}
+                  active={active === c}
+                  onClick={() => setActive(c)}
+                  label={c}
+                  emoji={categoryEmoji[c]}
+                  count={stores.filter((s) => s.category === c).length}
+                />
+              ))}
+            </div>
+            <input
+              type="search"
+              placeholder="Szukaj marki..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className="w-full lg:w-64 bg-transparent border border-ink/30 px-4 py-2 text-sm uppercase tracking-widest placeholder:text-ink/40 focus:outline-none focus:border-ink"
+            />
+          </div>
         </div>
       </div>
 
@@ -115,7 +138,9 @@ function SklepyPage() {
                     <span className="font-display font-bold text-base uppercase tracking-tight">
                       {s.name}
                     </span>
-                    <span className="text-xs text-ink/30 group-hover:text-paper/40">→</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-ink/40">
+                      {s.pavilion}
+                    </span>
                   </li>
                 ))}
               </ul>
