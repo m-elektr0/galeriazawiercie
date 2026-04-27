@@ -45,19 +45,19 @@ const pavilions: {
   },
   {
     code: "02",
-    name: "M Park Zawiercie",
-    key: "M Park",
-    tagline: "Wielkopowierzchniowe marki",
-    desc: "Park handlowy z największymi sklepami dla domu, modą wartościową i supermarketem. Wygodny dojazd, parking przy wejściu i sklepy o dużych metrażach.",
-    image: pavilionHome,
-  },
-  {
-    code: "03",
     name: "Aura Park Zawiercie",
     key: "Aura Park",
     tagline: "Codzienność, smak, multimedia",
     desc: "Strefa codziennych zakupów: supermarket, drogerie, multimedia, sport i szybkie jedzenie. Tu załatwisz wszystko po drodze.",
     image: pavilionFood,
+  },
+  {
+    code: "03",
+    name: "M Park Zawiercie",
+    key: "M Park",
+    tagline: "Wielkopowierzchniowe marki",
+    desc: "Park handlowy z największymi sklepami dla domu, modą wartościową i supermarketem. Wygodny dojazd, parking przy wejściu i sklepy o dużych metrażach.",
+    image: pavilionHome,
   },
 ];
 
