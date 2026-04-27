@@ -32,14 +32,14 @@ const pavilions = [
   {
     code: "01",
     name: "Galeria Brama Jury",
-    title: "Moda &\nAwangarda",
+    title: "MODA &\nROZRYWKA",
     image: pavilionFashion,
     desc: "Selekcja marek modowych, biżuterii i kosmetyków. Surowa estetyka spotyka rzemiosło.",
     cta: "Eksploruj sklepy",
   },
   {
     code: "02",
-    name: "M Park Zawiercie",
+    name: "AURA PARK ZAWIERCIE",
     title: "Smak &\nCodzienność",
     image: pavilionFood,
     desc: "Strefa gastronomiczna, supermarkety, multimedia. Tutaj zaczyna się każdy tydzień.",
@@ -47,8 +47,8 @@ const pavilions = [
   },
   {
     code: "03",
-    name: "Aura Park Zawiercie",
-    title: "Dom &\nForma",
+    name: "M PARK ZAWIERCIE",
+    title: "DOM &\nŻYCIE",
     image: pavilionHome,
     desc: "Wyposażenie wnętrz, sport, rozrywka. Wszystko, co tworzy przestrzeń do życia.",
     cta: "Zaplanuj wizytę",
@@ -66,9 +66,9 @@ function Index() {
       <header className="px-6 lg:px-12 pt-12 lg:pt-20 pb-16 lg:pb-24 max-w-[1600px] mx-auto w-full">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
           <h1 className="font-display font-extrabold text-[18vw] md:text-[12vw] leading-[0.78] tracking-tighter uppercase text-balance">
-            Trzy bryły.<br />
-            Jedno<br />
-            <span className="text-accent">miasto.</span>
+            TRZY MIEJSCA.<br />
+            JEDNO<br />
+            <span className="text-accent">RONDO.</span>
           </h1>
           <div className="max-w-[36ch] text-base md:text-lg text-ink/80 leading-relaxed font-medium pb-2">
             Zawiercie City Center to kompleks trzech pawilonów położonych
