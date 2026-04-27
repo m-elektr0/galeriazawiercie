@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import logo from "@/assets/logo.png";
 
 const links = [
   { to: "/", label: "Start" },
@@ -13,11 +14,8 @@ export function SiteHeader() {
   return (
     <nav className="sticky top-0 z-50 bg-paper/90 backdrop-blur-md border-b border-ink/20">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex items-center justify-between py-5">
-        <Link
-          to="/"
-          className="text-xs font-bold uppercase tracking-[0.2em] text-ink hover:opacity-70 transition-opacity"
-        >
-          Zawiercie City Center
+        <Link to="/" aria-label="Zawiercie City Center — strona główna" className="hover:opacity-70 transition-opacity">
+          <img src={logo} alt="Zawiercie City Center" className="h-10 md:h-12 w-auto" />
         </Link>
         <div className="hidden md:flex gap-10 text-xs font-medium uppercase tracking-[0.15em] text-ink/70">
           {links.map((l) => (

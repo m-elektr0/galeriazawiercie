@@ -1,13 +1,12 @@
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/logo.png";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-ink/20 bg-paper">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="md:col-span-2">
-          <div className="font-display text-3xl font-bold uppercase tracking-tighter leading-none">
-            Zawiercie<br />City Center
-          </div>
+          <img src={logo} alt="Zawiercie City Center" className="h-14 w-auto" />
           <p className="mt-6 text-sm text-ink/70 max-w-sm leading-relaxed">
             Trzy pawilony, jedno miejsce. Kompleks handlowo-rozrywkowy
             położony wokół ronda Jurajskich Rycerzy w Zawierciu.
