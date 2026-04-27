@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { stores, type StoreCategory } from "@/data/stores";
+import { stores, type Pavilion } from "@/data/stores";
 import pavilionFashion from "@/assets/pavilion-fashion.jpg";
 import pavilionFood from "@/assets/pavilion-food.jpg";
 import pavilionHome from "@/assets/pavilion-home.jpg";
@@ -30,34 +30,34 @@ export const Route = createFileRoute("/pawilony")({
 const pavilions: {
   code: string;
   name: string;
+  key: Pavilion;
   tagline: string;
   desc: string;
   image: string;
-  themes: StoreCategory[];
 }[] = [
   {
     code: "01",
     name: "Galeria Brama Jury",
+    key: "Brama Jury",
     tagline: "Moda, biżuteria i uroda",
-    desc: "Główna galeria handlowa kompleksu. Tutaj koncentrują się największe marki modowe, salony jubilerskie i drogerie premium. Przestrzeń o ambitnej selekcji i komfortowym układzie.",
+    desc: "Główna galeria handlowa kompleksu. Tutaj koncentrują się największe marki modowe, salony jubilerskie i drogerie premium, a także kino, restauracje i punkty usługowe.",
     image: pavilionFashion,
-    themes: ["Moda", "Biżuteria i akcesoria", "Zdrowie i uroda", "Rozrywka"],
   },
   {
     code: "02",
     name: "M Park Zawiercie",
-    tagline: "Codzienność, smak, multimedia",
-    desc: "Park handlowy z supermarketami, multimediami i strefą gastronomiczną. Miejsce codziennych zakupów oraz szybkich spotkań przy kawie i lunchu.",
-    image: pavilionFood,
-    themes: ["Artykuły spożywcze", "Jedzenie", "Usługi i multimedia"],
+    key: "M Park",
+    tagline: "Wielkopowierzchniowe marki",
+    desc: "Park handlowy z największymi sklepami dla domu, modą wartościową i supermarketem. Wygodny dojazd, parking przy wejściu i sklepy o dużych metrażach.",
+    image: pavilionHome,
   },
   {
     code: "03",
     name: "Aura Park Zawiercie",
-    tagline: "Dom, sport i wyposażenie",
-    desc: "Pawilon poświęcony domowi, wnętrzom i aktywnemu stylowi życia. Wielkopowierzchniowe sklepy z meblami, materiałami budowlanymi oraz strefa sportowa.",
-    image: pavilionHome,
-    themes: ["Dom", "Sport"],
+    key: "Aura Park",
+    tagline: "Codzienność, smak, multimedia",
+    desc: "Strefa codziennych zakupów: supermarket, drogerie, multimedia, sport i szybkie jedzenie. Tu załatwisz wszystko po drodze.",
+    image: pavilionFood,
   },
 ];
 
@@ -144,7 +144,8 @@ function PawilonyPage() {
                   </span>
                   <div className="flex flex-wrap gap-2">
                     {stores
-                      .filter((s) => p.themes.includes(s.category))
+                      .filter((s) => s.pavilion === p.key)
+                      .sort((a, b) => a.name.localeCompare(b.name, "pl"))
                       .map((s) => (
                         <span
                           key={s.name}
