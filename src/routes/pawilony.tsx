@@ -5,6 +5,7 @@ import { stores, type StoreCategory } from "@/data/stores";
 import pavilionFashion from "@/assets/pavilion-fashion.jpg";
 import pavilionFood from "@/assets/pavilion-food.jpg";
 import pavilionHome from "@/assets/pavilion-home.jpg";
+import siteMap from "@/assets/site-map.png";
 
 export const Route = createFileRoute("/pawilony")({
   head: () => ({
@@ -79,6 +80,33 @@ function PawilonyPage() {
           handlowych regionu.
         </p>
       </header>
+
+      <section className="border-t border-ink/20 bg-stone/30">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-16 lg:py-24">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-accent">
+                Plan kompleksu
+              </span>
+              <h2 className="font-display text-3xl md:text-5xl font-bold uppercase tracking-tighter leading-[0.9] mt-3">
+                Wszystko wokół<br />jednego ronda.
+              </h2>
+            </div>
+            <p className="max-w-md text-sm md:text-base text-ink/70 leading-relaxed">
+              Trzy pawilony rozmieszczone wokół ronda Jurajskich Rycerzy.
+              Sprawdź, gdzie znajduje się Twoja ulubiona marka.
+            </p>
+          </div>
+          <div className="border border-ink/20 bg-paper overflow-hidden">
+            <img
+              src={siteMap}
+              alt="Plan kompleksu Zawiercie City Center — trzy pawilony wokół ronda Jurajskich Rycerzy"
+              loading="lazy"
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+      </section>
 
       <main className="flex-1">
         {pavilions.map((p, idx) => (

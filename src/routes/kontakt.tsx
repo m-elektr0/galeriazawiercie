@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import siteMap from "@/assets/site-map.png";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
@@ -62,12 +63,12 @@ function KontaktPage() {
           </InfoBlock>
         </div>
 
-        <div className="mt-16 aspect-[16/9] bg-stone overflow-hidden border border-ink/20">
-          <iframe
-            title="Mapa — rondo Jurajskich Rycerzy, Zawiercie"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=19.405%2C50.485%2C19.435%2C50.505&layer=mapnik"
-            className="w-full h-full grayscale-[60%]"
+        <div className="mt-16 border border-ink/20 bg-paper overflow-hidden">
+          <img
+            src={siteMap}
+            alt="Plan kompleksu Zawiercie City Center wokół ronda Jurajskich Rycerzy"
             loading="lazy"
+            className="w-full h-auto"
           />
         </div>
       </main>
