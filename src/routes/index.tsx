@@ -65,7 +65,7 @@ function Index() {
       {/* HERO */}
       <header className="px-6 lg:px-12 pt-12 lg:pt-20 pb-16 lg:pb-24 max-w-[1600px] mx-auto w-full">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
-          <h1 className="font-display font-extrabold text-[18vw] md:text-[12vw] leading-[0.78] tracking-tighter uppercase text-balance">
+          <h1 className="font-display font-extrabold text-[18vw] md:text-[12vw] leading-[0.78] tracking-tighter uppercase text-balance text-left mx-0">
             TRZY MIEJSCA.<br />
             JEDNO<br />
             <span className="text-accent">RONDO.</span>
