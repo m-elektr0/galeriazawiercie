@@ -1,6 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { zodValidator, fallback } from "@tanstack/zod-adapter";
-import { z } from "zod";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -8,12 +6,10 @@ import { stores, categoryEmoji } from "@/data/stores";
 import { storeCoords } from "@/data/store-coords";
 import siteMap from "@/assets/site-map.png";
 
-const searchSchema = z.object({
-  store: fallback(z.string(), "").default(""),
-});
-
 export const Route = createFileRoute("/plan")({
-  validateSearch: zodValidator(searchSchema),
+  validateSearch: (search: Record<string, unknown>) => ({
+    store: typeof search.store === "string" ? search.store : "",
+  }),
   head: () => ({
     meta: [
       { title: "Interaktywny plan — Zawiercie City Center" },
