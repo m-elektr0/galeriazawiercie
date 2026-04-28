@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -131,16 +131,19 @@ function SklepyPage() {
               </div>
               <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-ink/20 border border-ink/20">
                 {list.map((s) => (
-                  <li
-                    key={s.name}
-                    className="bg-paper p-5 hover:bg-ink hover:text-paper transition-colors cursor-default flex items-center justify-between gap-4"
-                  >
-                    <span className="font-display font-bold text-base uppercase tracking-tight">
-                      {s.name}
-                    </span>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-ink/40">
-                      {s.pavilion}
-                    </span>
+                  <li key={s.name} className="bg-paper">
+                    <Link
+                      to="/plan"
+                      search={{ store: s.name }}
+                      className="p-5 hover:bg-ink hover:text-paper transition-colors flex items-center justify-between gap-4 group"
+                    >
+                      <span className="font-display font-bold text-base uppercase tracking-tight">
+                        {s.name}
+                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-ink/40 group-hover:text-paper/60">
+                        {s.pavilion} →
+                      </span>
+                    </Link>
                   </li>
                 ))}
               </ul>
