@@ -42,7 +42,7 @@ const pavilions = [
     name: "AURA PARK ZAWIERCIE",
     title: "Smak &\nCodzienność",
     image: pavilionFood,
-    desc: "Strefa gastronomiczna, supermarkety, multimedia. Tutaj zaczyna się każdy tydzień.",
+    desc: "Strefa Fast food, sport, multimedia. Tutaj zaczyna się każdy tydzień.",
     cta: "Odkryj smaki",
   },
   {
@@ -50,8 +50,8 @@ const pavilions = [
     name: "M PARK ZAWIERCIE",
     title: "DOM &\nŻYCIE",
     image: pavilionHome,
-    desc: "Wyposażenie wnętrz, sport, rozrywka. Wszystko, co tworzy przestrzeń do życia.",
-    cta: "Zaplanuj wizytę",
+    desc: "Wyposażenie wnętrz, odzież, pielęgnacja. Wszystko, co tworzy przestrzeń do życia.",
+    cta: "SPRAWDŹ nowości",
   },
 ];
 
