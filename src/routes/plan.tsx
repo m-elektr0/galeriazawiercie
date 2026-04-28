@@ -32,7 +32,7 @@ function PlanPage() {
   const { store: storeParam } = Route.useSearch();
   const [active, setActive] = useState<string | null>(storeParam || null);
   const [hover, setHover] = useState<string | null>(null);
-  const targetRef = useRef<HTMLDivElement | null>(null);
+  const targetRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     setActive(storeParam || null);
