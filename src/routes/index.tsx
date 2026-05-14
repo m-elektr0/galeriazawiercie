@@ -6,6 +6,15 @@ import pavilionFashion from "@/assets/pavilion-fashion.jpg";
 import pavilionFood from "@/assets/pavilion-food.jpg";
 import pavilionHome from "@/assets/pavilion-home.jpg";
 import aerial from "@/assets/aerial-complex.jpg";
+import logoBramaJury from "@/assets/logo-brama-jury.jpg";
+import logoMPark from "@/assets/logo-m-park.jpg";
+import logoAuraPark from "@/assets/logo-aura-park.png";
+
+const pavilionLogos = [
+  { name: "Galeria Brama Jury", src: logoBramaJury, bg: "bg-paper" },
+  { name: "M Park Zawiercie", src: logoMPark, bg: "bg-paper" },
+  { name: "Aura Park Zawiercie", src: logoAuraPark, bg: "bg-paper" },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
