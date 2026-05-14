@@ -28,6 +28,7 @@ function SklepyPage() {
   const [active, setActive] = useState<StoreCategory | "Wszystkie">("Wszystkie");
   const [pav, setPav] = useState<Pavilion | "Wszystkie">("Wszystkie");
   const [query, setQuery] = useState("");
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const filtered = useMemo(() => {
     return stores
