@@ -5,7 +5,6 @@ import logo from "@/assets/logo.png";
 const links = [
   { to: "/", label: "Start" },
   { to: "/sklepy", label: "Sklepy" },
-  { to: "/plan", label: "Plan" },
   { to: "/pawilony", label: "Pawilony" },
   { to: "/kontakt", label: "Kontakt" },
 ] as const;

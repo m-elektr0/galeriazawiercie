@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
+import { PromoSlider } from "@/components/promo-slider";
 import { SiteFooter } from "@/components/site-footer";
 import { stores, categories, categoryEmoji } from "@/data/stores";
 import pavilionFashion from "@/assets/pavilion-fashion.jpg";
@@ -70,6 +71,7 @@ function Index() {
   return (
     <div className="min-h-dvh bg-paper text-ink flex flex-col">
       <SiteHeader />
+      <PromoSlider />
 
       {/* HERO */}
       <header className="px-6 lg:px-12 pt-12 lg:pt-20 pb-16 lg:pb-24 max-w-[1600px] mx-auto w-full">
