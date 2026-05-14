@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
+import { PromoSlider } from "@/components/promo-slider";
 import { SiteFooter } from "@/components/site-footer";
 import { stores, categories, categoryEmoji } from "@/data/stores";
 import pavilionFashion from "@/assets/pavilion-fashion.jpg";
