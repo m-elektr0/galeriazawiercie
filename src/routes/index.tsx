@@ -107,6 +107,31 @@ function Index() {
         </div>
       </header>
 
+      {/* PAVILION LOGOS */}
+      <section className="px-6 lg:px-12 max-w-[1600px] mx-auto w-full pt-4 pb-12 lg:pb-16">
+        <div className="flex items-center gap-4 mb-6">
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40">
+            Trzy marki / jeden kompleks
+          </span>
+          <div className="flex-1 h-px bg-ink/15" />
+        </div>
+        <div className="grid grid-cols-3 gap-px bg-ink/15 border border-ink/15">
+          {pavilionLogos.map((p) => (
+            <div
+              key={p.name}
+              className={`${p.bg} flex items-center justify-center p-6 md:p-10 aspect-[3/2] md:aspect-[5/2]`}
+            >
+              <img
+                src={p.src}
+                alt={p.name}
+                loading="lazy"
+                className="max-h-12 md:max-h-16 lg:max-h-20 w-auto object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* TRIPTYCH */}
       <section className="px-6 lg:px-12 max-w-[1600px] mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-ink/20 border-y border-ink/20">
