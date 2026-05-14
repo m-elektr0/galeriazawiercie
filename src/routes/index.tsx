@@ -71,6 +71,7 @@ function Index() {
   return (
     <div className="min-h-dvh bg-paper text-ink flex flex-col">
       <SiteHeader />
+      <PromoSlider />
 
       {/* HERO */}
       <header className="px-6 lg:px-12 pt-12 lg:pt-20 pb-16 lg:pb-24 max-w-[1600px] mx-auto w-full">
