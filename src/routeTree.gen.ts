@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SklepyRouteImport } from './routes/sklepy'
-import { Route as PlanRouteImport } from './routes/plan'
 import { Route as PawilonyRouteImport } from './routes/pawilony'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as IndexRouteImport } from './routes/index'
@@ -18,11 +17,6 @@ import { Route as IndexRouteImport } from './routes/index'
 const SklepyRoute = SklepyRouteImport.update({
   id: '/sklepy',
   path: '/sklepy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlanRoute = PlanRouteImport.update({
-  id: '/plan',
-  path: '/plan',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PawilonyRoute = PawilonyRouteImport.update({
@@ -45,14 +39,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/kontakt': typeof KontaktRoute
   '/pawilony': typeof PawilonyRoute
-  '/plan': typeof PlanRoute
   '/sklepy': typeof SklepyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/kontakt': typeof KontaktRoute
   '/pawilony': typeof PawilonyRoute
-  '/plan': typeof PlanRoute
   '/sklepy': typeof SklepyRoute
 }
 export interface FileRoutesById {
@@ -60,22 +52,20 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/kontakt': typeof KontaktRoute
   '/pawilony': typeof PawilonyRoute
-  '/plan': typeof PlanRoute
   '/sklepy': typeof SklepyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/kontakt' | '/pawilony' | '/plan' | '/sklepy'
+  fullPaths: '/' | '/kontakt' | '/pawilony' | '/sklepy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/kontakt' | '/pawilony' | '/plan' | '/sklepy'
-  id: '__root__' | '/' | '/kontakt' | '/pawilony' | '/plan' | '/sklepy'
+  to: '/' | '/kontakt' | '/pawilony' | '/sklepy'
+  id: '__root__' | '/' | '/kontakt' | '/pawilony' | '/sklepy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   KontaktRoute: typeof KontaktRoute
   PawilonyRoute: typeof PawilonyRoute
-  PlanRoute: typeof PlanRoute
   SklepyRoute: typeof SklepyRoute
 }
 
@@ -86,13 +76,6 @@ declare module '@tanstack/react-router' {
       path: '/sklepy'
       fullPath: '/sklepy'
       preLoaderRoute: typeof SklepyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/plan': {
-      id: '/plan'
-      path: '/plan'
-      fullPath: '/plan'
-      preLoaderRoute: typeof PlanRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pawilony': {
@@ -123,7 +106,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   KontaktRoute: KontaktRoute,
   PawilonyRoute: PawilonyRoute,
-  PlanRoute: PlanRoute,
   SklepyRoute: SklepyRoute,
 }
 export const routeTree = rootRouteImport
