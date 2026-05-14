@@ -117,7 +117,7 @@ function Index() {
           </span>
           <div className="flex-1 h-px bg-ink/15" />
         </div>
-        <div className="grid grid-cols-3 gap-px bg-ink/15 border border-ink/15">
+        <div className="grid grid-cols-3">
           {pavilionLogos.map((p) => (
             <div
               key={p.name}
