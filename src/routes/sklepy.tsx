@@ -65,6 +65,22 @@ function SklepyPage() {
       {/* FILTERS */}
       <div className="sticky top-[73px] z-40 bg-paper/95 backdrop-blur-md border-y border-ink/20">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-4 flex flex-col gap-3">
+          <button
+            onClick={() => setFiltersOpen((o) => !o)}
+            className="lg:hidden flex items-center justify-between w-full px-3 py-2 border border-ink/30 text-xs font-bold uppercase tracking-widest"
+            aria-expanded={filtersOpen}
+          >
+            <span>
+              Filtry
+              {(pav !== "Wszystkie" || active !== "Wszystkie") && (
+                <span className="ml-2 text-accent">
+                  ({[pav !== "Wszystkie" ? pav : null, active !== "Wszystkie" ? active : null].filter(Boolean).join(", ")})
+                </span>
+              )}
+            </span>
+            <ChevronDown className={`h-4 w-4 transition-transform ${filtersOpen ? "rotate-180" : ""}`} />
+          </button>
+          <div className={`${filtersOpen ? "flex" : "hidden"} lg:flex flex-col gap-3`}>
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-ink/40 mr-2">Pawilon</span>
             <CategoryChip
