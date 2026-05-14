@@ -127,6 +127,7 @@ function SklepyPage() {
               className="w-full lg:w-64 bg-transparent border border-ink/30 px-4 py-2 text-sm uppercase tracking-widest placeholder:text-ink/40 focus:outline-none focus:border-ink"
             />
           </div>
+          </div>
         </div>
       </div>
 
